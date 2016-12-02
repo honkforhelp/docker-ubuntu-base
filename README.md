@@ -32,7 +32,8 @@ Brought to you by the Friendly Dev Team™ at HONK Technologies!
 ## Inheriting this Docker image
 
 ```Dockerfile
-FROM honkdev/ubuntu-base
+# We highly suggest you pin your FROM to a specific verson of this image
+FROM honkdev/ubuntu-base:1.0.0
 
 # Gets the most current LTS version of NodeJS
 # Note: n's install command also sets it as the global node version
