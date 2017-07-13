@@ -31,18 +31,21 @@ Brought to you by the Friendly Dev Team™ at HONK Technologies!
 
 ## Inheriting this Docker image
 
+Example Dockerfile:
+
 ```Dockerfile
-FROM honkdev/ubuntu-base
+# We highly suggest you pin your FROM to a specific verson of this image
+FROM honkdev/ubuntu-base:1.0.2
 
 # Gets the most current LTS version of NodeJS
 # Note: n's install command also sets it as the global node version
 RUN n lts
 
 # Installs Ruby 2.3.3 and sets it as the global version of Ruby
-RUN rbenv install 2.3.3 && rbenv global 2.3.3
+RUN rbenv install 2.3.4 && rbenv global 2.3.4
 
 # Installs Python 2.7.1 and sets it as the global version of Python
-RUN pyenv install 2.7.1 && pyenv global 2.7.1
+RUN pyenv install 2.7.13 && pyenv global 2.7.13
 
 # Now you have those languages installed,
 # Do your application specific stuff here!

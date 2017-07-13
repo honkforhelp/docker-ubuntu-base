@@ -35,7 +35,7 @@ COPY deps /tmp/deps
 ENV RBENV_DIR /.rbenv
 
 RUN mkdir $RBENV_DIR \
-&& tar zxf /tmp/deps/rbenv-1.1.0.tar.gz -C $RBENV_DIR --strip-components=1 \
+&& tar zxf /tmp/deps/rbenv-1.1.1.tar.gz -C $RBENV_DIR --strip-components=1 \
 && $RBENV_DIR/src/configure \
 && make -C $RBENV_DIR/src
 
@@ -47,14 +47,14 @@ RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 ENV RUBY_BUILD_DIR /.ruby-build
 
 RUN mkdir $RUBY_BUILD_DIR \
-&& tar zxf /tmp/deps/ruby-build-20161121.tar.gz -C $RUBY_BUILD_DIR --strip-components=1 \
+&& tar zxf /tmp/deps/ruby-build-20170523.tar.gz -C $RUBY_BUILD_DIR --strip-components=1 \
 && $RUBY_BUILD_DIR/install.sh
 
 # Instal PYENV with no Python
 ENV PYENV_ROOT /.pyenv
 
 RUN mkdir $PYENV_ROOT \
-&& tar zxf /tmp/deps/pyenv-1.0.4.tar.gz -C $PYENV_ROOT --strip-components=1
+&& tar zxf /tmp/deps/pyenv-1.1.2.tar.gz -C $PYENV_ROOT --strip-components=1
 
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV PYENV_SHELL=bash
